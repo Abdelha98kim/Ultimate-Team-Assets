@@ -13,7 +13,7 @@ function displayplayers(data){
                        </figure>
                        <div class="flex flex-col justify-center items-center w-full pb-2">
                            <h1 class="text-lg font-medium ">${player.name}</h1>
-                           <h1 class="text-sm flex items-center"><img class="bg-[#E8E8D8] w-3 h-2 border-b border-black" src="${player.flag}" alt="${player.nationality}" title="${player.nationality}"> | ${player.position} | ${player.rating}</h1>
+                           <h1 class="text-sm flex items-center"><img class="bg-[#E8E8D8] w-3 h-2" src="${player.flag}" alt="${player.nationality}" title="${player.nationality}"> | ${player.position} | ${player.rating}</h1>
                        </div>
                      </div> 
                    </div>`
@@ -31,6 +31,59 @@ buttonAdding.addEventListener("click", function(){
 // Close the form of adding player
 const buttonClosing = document.getElementById("close-button");
 buttonClosing.addEventListener("click", function(){
+    const formAdding = document.getElementById("card-ajoute");
+    formAdding.style = "display:hidden;"
+});
+
+// Adding player to the list
+const addPlayer = document.getElementById("playerAdding");
+addPlayer.addEventListener("click", function(){
+    const fullName = document.getElementById("name").value;
+    const rating = document.getElementById("rating").value;
+    const position = document.getElementById("position").value;
+    const pace = document.getElementById("pace").value;
+    const shooting = document.getElementById("shooting").value;
+    const passing = document.getElementById("passing").value;
+    const dribbling = document.getElementById("dribbling").value;
+    const defending = document.getElementById("defending").value;
+    const physical = document.getElementById("physical").value;
+    const playerPicture = document.getElementById("player-picture").files[0];
+    let pictureUrl = '';
+    if (playerPicture) {
+        pictureUrl = URL.createObjectURL(playerPicture);
+    }
+    const countryFlag = document.getElementById("country-flag").files[0];
+    let flagUrl = '';
+    if (countryFlag) {
+        flagUrl = URL.createObjectURL(countryFlag);
+    }
+    const sectionCard = document.getElementById("displayAddingPlayers");
+
+    sectionCard.insertAdjacentHTML ("beforeend", 
+        `
+        <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap border border-black gap-2 bg-[#E6E9AF] w-24 ">
+            <figure class="w-full flex justify-center">
+                <img class="bg-[#E8E8D8] w-full h-24 border-b border-black" src="${pictureUrl}" alt="${fullName}" title="${fullName}">
+            </figure>
+            <div class="flex flex-col justify-center items-center w-full pb-2">
+                <h1 class="text-lg font-medium ">${fullName}</h1>
+                <h1 class="text-sm flex items-center"><img class="bg-[#E8E8D8] w-3 h-2" src="${flagUrl}" alt="Country Flag"> | ${position} | ${rating}</h1>
+            </div>
+          </div> 
+        </div>
+    ` 
+    )
+    document.getElementById("name").value = " ";
+    document.getElementById("rating").value = " ";
+    document.getElementById("position").value = " ";
+    document.getElementById("pace").value = " ";
+    document.getElementById("shooting").value = " ";
+    document.getElementById("passing").value = " ";
+    document.getElementById("dribbling").value = " ";
+    document.getElementById("defending").value = " ";
+    document.getElementById("physical").value = " ";
+
     const formAdding = document.getElementById("card-ajoute");
     formAdding.style = "display:hidden;"
 });
