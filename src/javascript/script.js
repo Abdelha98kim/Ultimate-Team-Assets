@@ -1,3 +1,4 @@
+// Fetching date from json and show it in simple cards
 fetch("../src/players.json")
     .then((response) => response.json())
     .then((data) => displayplayers(data.players))
@@ -19,3 +20,11 @@ function displayplayers(data){
    })
    .join( ``);
 }
+
+// Showing the form of adding player
+const buttonAdding = document.getElementById("add-player");
+buttonAdding.addEventListener("click", function(){
+    const formAdding = document.getElementById("card-ajoute");
+    formAdding.style = "display:block;"
+});
+
