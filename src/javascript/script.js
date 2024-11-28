@@ -28,3 +28,9 @@ buttonAdding.addEventListener("click", function(){
     formAdding.style = "display:block;"
 });
 
+// Close the form of adding player
+const buttonClosing = document.getElementById("close-button");
+buttonClosing.addEventListener("click", function(){
+    const formAdding = document.getElementById("card-ajoute");
+    formAdding.style = "display:hidden;"
+});
