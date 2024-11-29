@@ -7,7 +7,7 @@ function displayplayers(data){
     const cardPlayer = document.getElementById("dis-ply")
     cardPlayer.innerHTML = data.map((player) =>{
         return `<div class="flex flex-wrap gap-2">
-                     <div class="flex flex-wrap border border-black gap-2 bg-[#E6E9AF] w-24 ">
+                     <div class="flex flex-wrap border border-black gap-1 bg-[#E6E9AF] w-24 ">
                        <figure class="w-full flex justify-center">
                            <img class="bg-[#E8E8D8] w-full h-24 border-b border-black" src="${player.photo}" alt="${player.name}" title="${player.name}">
                        </figure>
@@ -39,6 +39,7 @@ buttonClosing.addEventListener("click", function(){
 const addPlayer = document.getElementById("playerAdding");
 addPlayer.addEventListener("click", function(){
     const fullName = document.getElementById("name").value;
+    var nameNoSpace = fullName.split(' ').join('');
     const rating = document.getElementById("rating").value;
     const position = document.getElementById("position").value;
     const pace = document.getElementById("pace").value;
@@ -61,14 +62,18 @@ addPlayer.addEventListener("click", function(){
 
     sectionCard.insertAdjacentHTML ("beforeend", 
         `
-        <div class="flex flex-wrap gap-2">
-          <div class="flex flex-wrap border border-black gap-2 bg-[#E6E9AF] w-24 ">
+        <div class="flex flex-wrap gap-2 mb-2" id="${nameNoSpace}">
+          <div class="flex flex-wrap border border-black gap-1 bg-[#E6E9AF] w-24 ">
             <figure class="w-full flex justify-center">
                 <img class="bg-[#E8E8D8] w-full h-24 border-b border-black" src="${pictureUrl}" alt="${fullName}" title="${fullName}">
             </figure>
-            <div class="flex flex-col justify-center items-center w-full pb-2">
+            <div class="flex flex-col justify-center items-center w-full mb-2">
                 <h1 class="text-lg font-medium ">${fullName}</h1>
-                <h1 class="text-sm flex items-center"><img class="bg-[#E8E8D8] w-3 h-2" src="${flagUrl}" alt="Country Flag"> | ${position} | ${rating}</h1>
+                <h1 class="text-sm flex items-center pt-3"><img class="bg-[#E8E8D8] w-3 h-2 mr-1" src="${flagUrl}" alt="Country Flag"> | ${position} | ${rating}</h1>
+                <div class="flex flex-wrap gap-1 pt-3">
+                        <button class="text-xs bg-orange-300 py-1 px-2 rounded-lg" id="edit">Edit</button>
+                        <button class="text-xs bg-orange-300 py-1 px-2 rounded-lg" onclick = "deleteCard(${nameNoSpace})">Delete</button>
+                </div>
             </div>
           </div> 
         </div>
@@ -87,3 +92,8 @@ addPlayer.addEventListener("click", function(){
     const formAdding = document.getElementById("card-ajoute");
     formAdding.style = "display:hidden;"
 });
+
+// delete card
+function deleteCard(nameNoSpace){ 
+    nameNoSpace.remove();
+}
