@@ -38,7 +38,6 @@ L'application permettra aux utilisateurs de construire leur équipe FUT (Ultimat
 
 1. **Cloner le dépôt:**
    ```bash
-   git clone https://github.com/ISTIFANO/TeamFolio-by-Pixel-Warriors.git
    git clone https://github.com/Abdelha98kim/Ultimate-Team-Assets.git
    ```
 2. **Acceder au project:**
