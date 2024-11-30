@@ -1,0 +1,12 @@
+@media (max-width: 972px) {
+ #main{
+    display: block;
+ }   
+ #sec1, #sec2{
+    width: 100%;
+ }
+}
+
+#sec2{
+    overflow-y: scroll;
+}
