@@ -158,16 +158,16 @@
                             </div>
                             <div>
                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Full Name</label>
-                                <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="Type Player Full Name" required="">
+                                <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="Type Player Full Name">
                             </div>
                             <div>
                                 <label for="rating" class="block mb-2 text-sm font-medium text-gray-900">Rating</label>
-                                <input type="number" name="rating" id="rating" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="Type Player rate" max="100" required="">
+                                <input type="number" name="rating" id="rating" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="Type Player rate" >
                             </div>
                             <div>
                                 <label for="position" class="block mb-2 text-sm font-medium text-gray-900">Position</label>
                                 <select id="position" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
-                                    <option selected=""></option>
+                                    <option selected=" "></option>
                                     <option value="GK">GK</option>
                                     <option value="RW">RW</option>
                                     <option value="LW">LW</option>
@@ -182,33 +182,36 @@
                             <div class="flex flex-wrap gap-2 w-full justify-center p-4">
                                 <div class="w-24">
                                     <label for="pace" class="block mb-2 text-sm font-medium text-gray-900 flex justify-center">pace</label>
-                                    <input type="number" name="pace" id="pace" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required="" max="99">
+                                    <input type="number" name="pace" id="pace" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" >
                                 </div>
                                 <div class="w-24">
                                     <label for="shooting" class="block mb-2 text-sm font-medium text-gray-900 flex justify-center">shooting</label>
-                                    <input type="number" name="shooting" id="shooting" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required="" max="99">
+                                    <input type="number" name="shooting" id="shooting" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" >
                                 </div>
                                 <div class="w-24">
                                     <label for="passing" class="block mb-2 text-sm font-medium text-gray-900 flex justify-center">passing</label>
-                                    <input type="number" name="passing" id="passing" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required="" max="99">
+                                    <input type="number" name="passing" id="passing" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" >
                                 </div>
                                 <div class="w-24">
                                     <label for="dribbling" class="block mb-2 text-sm font-medium text-gray-900 flex justify-center">dribbling</label>
-                                    <input type="number" name="dribbling" id="dribbling" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required="" max="99">
+                                    <input type="number" name="dribbling" id="dribbling" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" >
                                 </div>
                                 <div class="w-24">
                                     <label for="defending" class="block mb-2 text-sm font-medium text-gray-900 flex justify-center">defending</label>
-                                    <input type="number" name="defending" id="defending" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required="" max="99">
+                                    <input type="number" name="defending" id="defending" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" >
                                 </div>
                                 <div class="w-24">
                                     <label for="physical" class="block mb-2 text-sm font-medium text-gray-900 flex justify-center">physical</label>
-                                    <input type="number" name="physical" id="physical" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required="" max="99">
+                                    <input type="number" name="physical" id="physical" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" >
                                 </div>
                             </div>
-                            <div class="flex w-full justify-center pt-4">
-                                <button id="playerAdding" type="submit"class="text-white inline-flex items-center bg-[#38003d] font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                            <div class="flex w-full justify-center pt-4 gap-2">
+                                <button id="playerAdding" type="button"class="text-white inline-flex items-center bg-[#38003d] font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                     <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                                     Add Player
+                                </button>
+                                <button id="playerAdding" type="reset"class="text-white inline-flex items-center bg-[#38003d] font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    reset
                                 </button>
                             </div>
                         </form>
