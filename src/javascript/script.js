@@ -293,6 +293,83 @@ addPlayer.addEventListener("click", function(){
     }
 });
 
+// add RW
+const rwButton = document.getElementById("rw");
+rwButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add LW
+const lwButton = document.getElementById("lw");
+lwButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add ST
+const stButton = document.getElementById("st");
+stButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add CMR
+const cmrButton = document.getElementById("cmr");
+cmrButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add CML
+const cmlButton = document.getElementById("cml");
+cmlButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add CMT
+const cmtButton = document.getElementById("cmt");
+cmtButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add RB
+const rbButton = document.getElementById("rb");
+rbButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add LB
+const lbButton = document.getElementById("lb");
+lbButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add CBR
+const cbrButton = document.getElementById("cbr");
+cbrButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add CBL
+const cblButton = document.getElementById("cbl");
+cblButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add GK
+const gkButton = document.getElementById("gk");
+gkButton.addEventListener("click", function(){
+    let showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
 // delete card
 function deleteCard(nameNoSpace){ 
     nameNoSpace.remove();
