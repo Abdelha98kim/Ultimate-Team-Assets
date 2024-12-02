@@ -19,6 +19,21 @@ function displayplayers(data){
                    </div>`
    })
    .join( ``);
+   const popform = document.getElementById("form-pop")
+   popform.innerHTML = data.map((player) =>{
+        return `<div class="flex flex-wrap gap-2">
+                     <div class="flex flex-wrap border border-black gap-1 bg-[#E6E9AF] w-24 ">
+                       <figure class="w-full flex justify-center">
+                           <img class="bg-[#E8E8D8] w-full h-24 border-b border-black" src="${player.photo}" alt="${player.name}" title="${player.name}">
+                       </figure>
+                       <div class="flex flex-col justify-center items-center w-full pb-2">
+                           <h1 class="text-lg font-medium ">${player.name}</h1>
+                           <h1 class="text-sm flex items-center"><img class="bg-[#E8E8D8] w-3 h-2" src="${player.flag}" alt="${player.nationality}" title="${player.nationality}"> | ${player.position} | ${player.rating}</h1>
+                       </div>
+                     </div> 
+                   </div>`
+   })
+   .join( ``);
 }
 
 // Showing the form of adding player
@@ -33,6 +48,13 @@ const buttonClosing = document.getElementById("close-button");
 buttonClosing.addEventListener("click", function(){
     const formAdding = document.getElementById("card-ajoute");
     formAdding.style = "display:hidden;"
+});
+
+// close adding terrain player 
+const buttonCloseForm = document.getElementById("close-form-show");
+buttonCloseForm.addEventListener("click", function(){
+    const formAdding = document.getElementById("sec3");
+    formAdding.style = "display:none;"
 });
 
 // Adding player to the list
@@ -59,7 +81,7 @@ addPlayer.addEventListener("click", function(){
         flagUrl = URL.createObjectURL(countryFlag);
     }
     const sectionCard = document.getElementById("displayAddingPlayers");
-
+    const formpop = document.getElementById("form-pop");
 
     var picturecheck;
     if(pictureUrl == ""){
@@ -235,6 +257,21 @@ addPlayer.addEventListener("click", function(){
                             <button class="text-xs bg-orange-300 py-1 px-2 rounded-lg" id="edit">Edit</button>
                             <button class="text-xs bg-orange-300 py-1 px-2 rounded-lg" onclick = "deleteCard(${nameNoSpace})">Delete</button>
                     </div>
+                </div>
+              </div> 
+            </div>
+        ` 
+        )
+        formpop.insertAdjacentHTML ("beforeend", 
+            `
+            <div class="flex flex-wrap gap-2 mb-2">
+              <div class="flex flex-wrap border border-black gap-1 bg-[#E6E9AF] w-24 ">
+                <figure class="w-full flex justify-center">
+                    <img class="bg-[#E8E8D8] w-full h-24 border-b border-black" src="${pictureUrl}" alt="${fullName}" title="${fullName}">
+                </figure>
+                <div class="flex flex-col justify-center items-center w-full mb-2">
+                    <h1 class="text-lg font-medium ">${fullName}</h1>
+                    <h1 class="text-sm flex items-center pt-3"><img class="bg-[#E8E8D8] w-3 h-2 mr-1" src="${flagUrl}" alt="Country Flag"> | ${position} | ${rating}</h1>
                 </div>
               </div> 
             </div>

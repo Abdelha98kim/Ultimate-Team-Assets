@@ -7,6 +7,10 @@
  }
 }
 
-#sec2{
+#sec2, #sec3{
     overflow-y: scroll;
+}
+
+#card-ajoute{
+    z-index: 1000;
 }
