@@ -40,6 +40,9 @@
         <!-- terrain + button -->
         <section class="h-screen " id="sec1">
             <div class="relative h-screen">
+                <div class="flex justify-center my-2">
+                    <button class="bg-[#FFBD39] p-2 rounded-full" id="stadAdd" >Add to Stade</button>
+                </div>
                 <figure class="flex justify-center w-full h-screen">
                     <img src="../src/assets/img/Youcode-terrain.png" alt="Soccer terrain">
                 </figure>
@@ -109,6 +112,7 @@
                 <div class="flex absolute top-10 justify-center w-full">
                     <figure class="flex justify-center w-14 h-14">
                         <button class="bg-[#33372C] rounded-full w-full focus:border-2 focus:border-white" id="gk">+</button>
+                        <button class="bg-[#33372C] rounded-full w-full focus:border-2 hidden" id="gkajoute"></button>
                     </figure>
                 </div>
 
@@ -126,6 +130,25 @@
                         </button>
                     </div>
                 </section>
+
+                <section class="w-full h-screen bg-gray-200 rounded-xl absolute top-2 p-3 flex items-center hidden" id="sec4">    
+                    <div class=" w-full pb-5">
+                        <p>Where do you want to place this player </p>
+                        <select id="positionselect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+                            <option selected=" "></option>
+                            <option value="GK">GK</option>
+                            <option value="RW">RW</option>
+                            <option value="LW">LW</option>
+                            <option value="RB">RB</option>
+                            <option value="LB">LB</option>
+                            <option value="ST">ST</option>
+                            <option value="CM">CM</option>
+                            <option value="CB">CB</option>
+                            <option value="CDM">CDM</option>
+                        </select>
+                    </div>
+                </section>
+                
             </div>
             
         </section>
