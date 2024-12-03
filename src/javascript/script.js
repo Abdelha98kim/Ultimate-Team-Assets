@@ -2,7 +2,6 @@
 fetch("../src/players.json")
     .then((response) => response.json())
     .then((data) => displayplayers(data.players))
-
 function displayplayers(data){
     const cardPlayer = document.getElementById("dis-ply")
     cardPlayer.innerHTML = data.map((player) =>{
@@ -21,7 +20,7 @@ function displayplayers(data){
    .join( ``);
    const popform = document.getElementById("form-pop")
    popform.innerHTML = data.map((player) =>{
-        return `<div class="flex flex-wrap gap-2">
+        return `<div class="flex flex-wrap gap-2 mb-2" onclick = "popplayer(event)">
                      <div class="flex flex-wrap border border-black gap-1 bg-[#E6E9AF] w-24 ">
                        <figure class="w-full flex justify-center">
                            <img class="bg-[#E8E8D8] w-full h-24 border-b border-black" src="${player.photo}" alt="${player.name}" title="${player.name}">
@@ -48,13 +47,6 @@ const buttonClosing = document.getElementById("close-button");
 buttonClosing.addEventListener("click", function(){
     const formAdding = document.getElementById("card-ajoute");
     formAdding.style = "display:hidden;"
-});
-
-// close adding terrain player 
-const buttonCloseForm = document.getElementById("close-form-show");
-buttonCloseForm.addEventListener("click", function(){
-    const formAdding = document.getElementById("sec3");
-    formAdding.style = "display:none;"
 });
 
 // Adding player to the list
@@ -264,7 +256,7 @@ addPlayer.addEventListener("click", function(){
         )
         formpop.insertAdjacentHTML ("beforeend", 
             `
-            <div class="flex flex-wrap gap-2 mb-2">
+            <div class="flex flex-wrap gap-2 mb-2" onclick = "popplayer(event)">
               <div class="flex flex-wrap border border-black gap-1 bg-[#E6E9AF] w-24 ">
                 <figure class="w-full flex justify-center">
                     <img class="bg-[#E8E8D8] w-full h-24 border-b border-black" src="${pictureUrl}" alt="${fullName}" title="${fullName}">
@@ -291,6 +283,92 @@ addPlayer.addEventListener("click", function(){
     }else{
         alert("Please Fill all field")
     }
+});
+
+// add RW
+const rwButton = document.getElementById("rw");
+rwButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block";   
+});
+
+// add LW
+const lwButton = document.getElementById("lw");
+lwButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block";   
+});
+
+// add ST
+const stButton = document.getElementById("st");
+stButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block";  
+});
+
+// add CMR
+const cmrButton = document.getElementById("cmr");
+cmrButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add CML
+const cmlButton = document.getElementById("cml");
+cmlButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add CMT
+const cmtButton = document.getElementById("cmt");
+cmtButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add RB
+const rbButton = document.getElementById("rb");
+rbButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block"; 
+});
+
+// add LB
+const lbButton = document.getElementById("lb");
+lbButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add CBR
+const cbrButton = document.getElementById("cbr");
+cbrButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add CBL
+const cblButton = document.getElementById("cbl");
+cblButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+});
+
+// add GK
+const gkButton = document.getElementById("gk");
+gkButton.addEventListener("click", function(){
+    const showingform = document.getElementById("sec3");
+    showingform.style = "display:block";
+    gkButton.style = "display: none;"
+    
+}); 
+// close adding terrain player 
+const buttonCloseForm = document.getElementById("close-form-show");
+buttonCloseForm.addEventListener("click", function(){
+    const formAdding = document.getElementById("sec3");
+    formAdding.style = "display:none;"
+    gkButton.style = "display: block;"
 });
 
 // delete card
